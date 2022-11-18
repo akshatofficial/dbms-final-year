@@ -29,7 +29,7 @@ const Interviews = () => {
     try {
       const { data } = await FetchInterviews();
       setInterviews(data);
-      //   console.log(data);
+        console.log(data);
     } catch (e) {
       console.log(e);
     }
@@ -43,6 +43,7 @@ const Interviews = () => {
     { label: "Application ID", id: "application_id" },
     { label: "Start Time", id: "start_time" },
     { label: "Ending Time", id: "end_time" },
+    { label: "Pass/Fail", id: "pass" },
   ];
 
   let applicationTests_columns = [
@@ -64,7 +65,7 @@ const Interviews = () => {
   const [openInterviewForm, setOpenInterviewForm] = useState(false);
   const [openEditInterviewForm, setOpenEditInterviewForm] = useState(false);
   return (
-    <Box component={'main'} sx={{ p:7 }}>
+    <Box component={"main"} sx={{ p: 7 }}>
       {application_tests ? (
         <div className="container">
           <div className="table-container">

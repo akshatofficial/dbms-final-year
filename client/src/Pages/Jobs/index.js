@@ -108,6 +108,7 @@ const Jobs = () => {
             <DataTable
               columns={jobs_columns}
               rows={jobs}
+              nextMethod={fetchJobs}
               // deleteMethod={DeleteApplicationTest}
               // nextMethod={fetchApplicationTests}
               // openEditForm={openEditApplicationTestForm}

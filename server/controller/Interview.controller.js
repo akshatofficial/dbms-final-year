@@ -10,9 +10,12 @@ class Interviews {
   }
 
   async getInterviewsHandler(req, res) {
-    let sql = "select * from interview";
+    // let sql = "select * from interview";
+    let sql =
+      "select i.application_id as application_id, i.start_time as start_time, i.end_time as end_time, inte.pass as pass from interview i, interview_note inte where inte.interview_id = i.Id;";
     connection.query(sql, function (err, results) {
       if (err) throw err;
+      console.log(results);
       res.send(results);
     });
   }
